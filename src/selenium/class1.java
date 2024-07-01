@@ -7,15 +7,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class class1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
 		// TODO Auto-generated method stub
 WebDriver driver=new ChromeDriver();
 driver.get("https://www.amazon.in/");
 driver.findElement(By.xpath("//a[@id='nav-logo-sprites']")).click();
  WebElement element=driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-		 element.sendKeys("iphone 11");
+		 element.sendKeys("iphone");
  element.submit();
- driver.findElement(By.xpath("//span[text()='iPhone 13 (128GB) - Pink']")).click();
+ Thread.sleep(4000);
+ 
+driver.findElement(By.xpath("//span[text()='iPhone 13 (128GB) - Pink']")).click();
+
  
 		 
 	}
